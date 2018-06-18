@@ -1,0 +1,104 @@
+<!---NAV SECTION -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-full" id="nav-main">
+        <a class="navbar-brand" href="#">FiFo</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">How it works</a>
+            </li>
+
+             <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+            </li>
+
+             <li class="nav-item">
+                <a class="nav-link" href="#">Developers</a>
+            </li>
+
+             <li class="nav-item">
+                <a class="nav-link" href="#">Help</a>
+            </li>
+           
+           
+         </ul>
+                 
+            <form class="form-inline">
+                 <div class="form-group">
+                     <button type="button" class="btn btn-primary mb-2" data-toggle="modal" data-target="#loginModal">Login</button>
+                 </div>
+                 <div class="form-group mx-sm-3">
+                     <button type="button" class="btn btn-info mb-2" data-toggle="modal" data-target="#loginModal">Register</button>
+                 </div>
+            </form>
+
+</nav>
+
+<!---MAIN SECTION -->
+
+<section id="cover">
+    <div id="cover-caption">
+            <div class="container">
+                <div class="align-items-center ">
+                    <h1 class="display-3">Welcome to the new world of Payments</h1>
+                    <h3 class="display-5">We are like Paypal but better</h3>
+
+                    <!--- form elements rendered inline  -->
+                  <form method="" class="form-inline justify-content-center">
+                    <div class="form-group">
+                    <label for="staticEmail2" class="sr-only">Email</label>
+                        <input type="text"  class="form-control" id="staticEmail2" value="email@example.com">
+                    </div>
+                    <div class="form-group mx-sm-3">
+                    <label for="inputPassword2" class="sr-only">Password</label>
+                        <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+                    </div>
+                        <button type="submit" class="btn btn-primary">Confirm identity</button>
+                  </form>
+
+                    <br/>
+
+                     <a href="#nav-main" class="btn btn-secondary-outline btn-sm input" role="button"> &darr; </a>
+                </div>
+            </div>
+    </div>  
+</section>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Email:</label>
+            <input type="text" class="form-control" id="recipient-email">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Password:</label>
+           <input type="text" class="form-control" id="recipient-password">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Login</button>
+      </div>
+    </div>
+  </div>
+</div>

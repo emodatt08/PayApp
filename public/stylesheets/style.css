@@ -1,0 +1,23 @@
+html,body {
+  height:100%;
+ 
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+
+
+/* header css */
+#cover{
+    background:#222 url('../../images/img/stars.jpg') center center no-repeat;
+    background-size: cover;
+    color:white;
+    height:100%;
+    text-align:center;
+    display: flex;
+    align-items:center;
+
+}
+
+#cover-caption{
+  width:100%;
+}
