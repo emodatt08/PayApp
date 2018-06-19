@@ -35,7 +35,7 @@
                      <button type="button" class="btn btn-primary mb-2" data-toggle="modal" data-target="#loginModal">Login</button>
                  </div>
                  <div class="form-group mx-sm-3">
-                     <button type="button" class="btn btn-info mb-2" data-toggle="modal" data-target="#loginModal">Register</button>
+                     <button type="button" class="btn btn-info mb-2" data-toggle="modal" data-target="#registerModal">Register</button>
                  </div>
             </form>
 
@@ -73,7 +73,7 @@
 
 
 
-<!-- Modal -->
+<!-- Login Modal -->
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -84,21 +84,58 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <form action="auth/login" method="POST">
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Email:</label>
-            <input type="text" class="form-control" id="recipient-email">
+            <input type="text" class="form-control" name= "email" id="recipient-email">
           </div>
           <div class="form-group">
             <label for="message-text" class="col-form-label">Password:</label>
-           <input type="text" class="form-control" id="recipient-password">
+           <input type="text" class="form-control" name= "password" id="recipient-password">
           </div>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Login</button>
+        <button type="submit" class="btn btn-primary">Login</button>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- Register Modal -->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Register</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="auth/register" method="POST">
+            <div class="form-group">
+            <label for="recipient-email" class="col-form-label">Username:</label>
+            <input type="text" class="form-control" name= "username" id="recipient-email">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Email:</label>
+            <input type="text" class="form-control" name= "email" id="recipient-email">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Password:</label>
+           <input type="password" class="form-control" name= "password" id="recipient-password">
+          </div>
+
+          
+       
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <input type="Submit" class="btn btn-info" value ="Register">
+      </div>
+       </form>
     </div>
   </div>
 </div>
