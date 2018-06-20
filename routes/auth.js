@@ -34,5 +34,12 @@ router.post('/register', function(req, res) {
             }
     })
   });
+
+router.post('/login', passport.authenticate('local',{
+      failureRedirect:'/login',
+      successRedirect:'/dashboard'
+  }), function(req, res){
+        res.send('hey')
+  });
         return router;
 }
