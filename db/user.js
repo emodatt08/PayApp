@@ -16,7 +16,7 @@ var userSchema = new schema({
     email:{
         type:String,
         required:true,
-    },
+    }
 })
 userSchema.methods.hashPassword = function(password){
     return bcrypt.hashSync(password, bcrypt.genSaltSync(10));

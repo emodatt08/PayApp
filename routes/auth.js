@@ -5,18 +5,28 @@ var User = require('../db/User');
 
 
 module.exports = function(passport){
-    /* GET home page. */
+
+ /* process the login . */
+router.post('/login', passport.authenticate('local',{
+   
+    failureRedirect:'/',
+    successRedirect:'/dashboard'
+}), function(req, res){
+      res.send('hey')
+});
+
+    /* process the registration . */
 router.post('/register', function(req, res) {
     var body = req.body,
         username = body.username,
         password = body.password;
         email = body.email;
-    User.findOne({username:username},function(err, doc){
+    User.findOne({email:email},function(err, doc){
             if(err){
                 res.status(500).send('error ocurred');
             }else{
                 if(doc){
-                    res.status(500).send('Username already exist')
+                    res.status(500).send('Email already exist')
                 }else{
                     var insert = new User()
                     insert.username = username;
@@ -35,11 +45,5 @@ router.post('/register', function(req, res) {
     })
   });
 
-router.post('/login', passport.authenticate('local',{
-      failureRedirect:'/login',
-      successRedirect:'/dashboard'
-  }), function(req, res){
-        res.send('hey')
-  });
         return router;
 }

@@ -11,7 +11,26 @@ module.exports = function(passport){
              done(null, user)
     })
 
-    passport.use(new localStrategy(function(username, password, done){
-        console.log(username, password);
+    passport.use(new localStrategy(function(email, password, done){
+        User.findOne({email:email}, function(err, doc){
+            if(err){
+                done(err)
+            }else{
+                if(doc){
+                    var valid = doc.comparePassword(password, doc.password)
+                    if(valid){
+                        done(null, {
+                            email:doc.email,
+                            password:doc.password
+                        })
+                    }else{
+                        done(null,false)
+                    }
+                }else{
+                    done(null, false)
+                }
+                
+            }
+        })
     }))
 }
