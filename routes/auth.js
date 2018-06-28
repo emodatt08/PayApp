@@ -6,14 +6,6 @@ var User = require('../db/User');
 
 module.exports = function(passport){
 
- /* process the login . */
-router.post('/login', passport.authenticate('local',{
-   
-    failureRedirect:'/',
-    successRedirect:'/dashboard'
-}), function(req, res){
-      res.send('hey')
-});
 
     /* process the registration . */
 router.post('/register', function(req, res) {
@@ -33,17 +25,23 @@ router.post('/register', function(req, res) {
                     insert.email = email;
                     insert.password = insert.hashPassword(password)
                     insert.save(function(err,user){
-                        if(err){
-                            res.status(500).send(err);
-                        }else{
-                            res.send(user)
+                        if (err) {
+                            res.status(500).send('db error')
+                        } else {
+                            res.redirect('/login')
                         }
-                           
                     })
                 }
             }
     })
   });
 
-        return router;
-}
+ router.post('/login', passport.authenticate('local', {
+        failureRedirect: '/',
+        successRedirect: '/dashboard',
+    }), function (req, res) {
+        res.send('hey')
+    })
+    return router;
+       
+};
